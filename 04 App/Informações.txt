@@ -1,0 +1,1 @@
+O aplicativo foi desenvolvido e colocado na raiz do diretório para que fosse possível realizar o deploy no site 'streamlit.com'.
