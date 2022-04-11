@@ -7,9 +7,6 @@ print("\n\nSTARTING....")
 # Configura página
 st.set_page_config(
     page_title="Recomendação de produtos de skincare",
-    # layout='wide',
-    #page_icon= 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/facebook/304/lotion-bottle_1f9f4.png'
-    #page_icon= 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/lotion-bottle_1f9f4.png'
     page_icon='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/310/lotion-bottle_1f9f4.png'
 )
 
@@ -18,9 +15,9 @@ st.set_page_config(
 # Função para carregamento da matriz de similaridade e do dataset
 def load_data():
     sim_matrix = np.load(
-        "../03 Notebook e datasets gerados/Similarity Matrix.npy")
+        "03 Notebook e datasets gerados/Similarity Matrix.npy")
     df = pd.read_csv(
-        "../03 Notebook e datasets gerados/Exploded Dataframe.csv")
+        "03 Notebook e datasets gerados/Exploded Dataframe.csv")
 
     # Remove os itens do formato de lista para determinadas colunas
     for col in ["Skin Type", "Skin Concerns", "Formulation", "Skincare By Age", "Ingredients", "Function"]:
