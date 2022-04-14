@@ -86,6 +86,8 @@ df_resumed = get_resumed_df(df_top_5)
 with st.expander("Mais informações..."):
     st.table(df_resumed[:1].T.astype(str))
 
+st.write("### Produtos recomendados:")
+
 # Mostra os produtos recomendados
 for idx, (index, row) in enumerate(df_top_5.iterrows()):
 
