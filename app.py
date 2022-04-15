@@ -76,12 +76,12 @@ st.caption(
 st.write("### \n### Escolha um produto:")
 
 # Cria caixa de seleção
-product = st.selectbox("Produto:", df['Full Name'].sort_values())
-
+col1, col2 = st.columns([0.2,0.8])
+product = col2.selectbox("Produto:", df['Full Name'].sort_values())
 prod_id = df[df['Full Name'] == product].index
-
 df_top_5 = busca_similares(prod_id, sim_matrix)
 df_resumed = get_resumed_df(df_top_5)
+col1.image(df_top_5.iloc[0]["Image URL"])
 
 with st.expander("Mais informações..."):
     st.table(df_resumed[:1].T.astype(str))
